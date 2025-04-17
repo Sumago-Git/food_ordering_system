@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router";
 
 // Assume these icons are imported from an icon library
 import {
-  GridIcon,
   HorizontaLDots,
  
   UserCircleIcon,
@@ -16,18 +15,6 @@ type NavItem = {
   path?: string;
 };
 
-const commonNavItems: NavItem[] = [
-  {
-    icon: <GridIcon />,
-    name: "Dashboard",
-    path: "/dashboard",
-  },
-  {
-    icon: <UserCircleIcon />,
-    name: "User Profile",
-    path: "/profile",
-  },
-];
 
 const adminNavItems: NavItem[] = [
   {
@@ -188,7 +175,6 @@ const AppSidebar: React.FC = () => {
                 )}
               </h2>
               {renderMenuItems([
-                ...commonNavItems,
                 ...(userRole === "admin" ? adminNavItems : []),
                 ...(userRole === "superadmin" ? superAdminNavItems : []),
               ])}

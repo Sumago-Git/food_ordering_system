@@ -776,3 +776,11 @@ span.flatpickr-weekday,
 .simplebar-scrollbar.simplebar-visible:before {
   @apply opacity-100;
 }
+
+.menu-item-active {
+  background-color: var(--color-brand-50);
+  color: var(--color-brand-500);
+  border-radius: 5px solid red;
+  border-right: 5px solid;
+  border-radius: 0px;
+}
