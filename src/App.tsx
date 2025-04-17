@@ -73,7 +73,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
-// import ProtectedRoute from "./components/protectroute/ProtectedRoute";
+import ProtectedRoute from "./components/protectroute/ProtectedRoute";
 
 import SignIn from "./pages/AuthPages/SignIn";
 import SignUp from "./pages/AuthPages/SignUp";
@@ -121,9 +121,9 @@ const App: React.FC = () => {
           <Route
             path="/"
             element={
-              // <ProtectedRoute allowedRoles={["superadmin"]}>
+              <ProtectedRoute allowedRoles={["admin"]}>
                 <AppLayout />
-              // </ProtectedRoute>
+              </ProtectedRoute>
             }
           >
             <Route index element={<Home />} />
