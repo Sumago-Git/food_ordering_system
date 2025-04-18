@@ -106,13 +106,13 @@ export default function SignInForm() {
 
                 <a
                   href="/reset-password"
-                  className="text-sm text-brand-500 hover:text-brand-600 dark:text-brand-400"
+                  className="text-sm text-green-600 hover:text-green-500 dark:text-green-500"
                 >
                   Forgot password?
                 </a>
               </div>
               <div>
-                <Button className="w-full" size="sm">
+              <Button className="w-full size-10 bg-green-500 hover:bg-green-600 text-white">
                   Sign in
                 </Button>
               </div>
