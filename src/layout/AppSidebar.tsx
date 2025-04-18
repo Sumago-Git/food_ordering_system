@@ -20,22 +20,22 @@ const adminNavItems: NavItem[] = [
   {
     icon: <UserCircleIcon />,
     name: "Category Management",
-    path: "/categorymanagement",
+    path: "/admin/categorymanagement",
   },
   {
     icon: <UserCircleIcon />,
     name: "Menu Management",
-    path: "/menumanagement",
+    path: "/admin/menumanagement",
   },
   {
     icon: <UserCircleIcon />,
     name: "App Feedback Management",
-    path: "/appfeedbackmanagement",
+    path: "/admin/appfeedbackmanagement",
   },
   {
     icon: <UserCircleIcon />,
     name: "Order Management",
-    path: "/ordermanagement",
+    path: "/admin/ordermanagement",
   },
 ];
 
@@ -43,32 +43,32 @@ const superAdminNavItems: NavItem[] = [
   {
     icon: <UserCircleIcon />,
     name: "App User Management",
-    path: "/appusermanagement",
+    path: "/superadmin/appusermanagement",
   },
   {
     icon: <UserCircleIcon />,
     name: "QR Code Management",
-    path: "/qrcodemanagement",
+    path: "/superadmin/qrcodemanagement",
   },
   {
     icon: <UserCircleIcon />,
     name: "Hotel Admin Users",
-    path: "/hoteladminusers",
+    path: "/superadmin/hoteladminusers",
   },
   {
     icon: <UserCircleIcon />,
     name: "Hotels",
-    path: "/hotels",
+    path: "/superadmin/hotels",
   },
   {
     icon: <UserCircleIcon />,
     name: "Reports",
-    path: "/reports",
+    path: "/superadmin/reports",
   },
   {
     icon: <UserCircleIcon />,
     name: "Feedback Management",
-    path: "/feedbackmanagement",
+    path: "/superadmin/feedbackmanagement",
   },
 ];
 
