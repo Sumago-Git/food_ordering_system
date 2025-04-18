@@ -3,39 +3,46 @@ import { useNavigate } from "react-router-dom"; // <-- important
 import { EyeCloseIcon, EyeIcon } from "../../icons";
 import Label from "../form/Label";
 import Input from "../form/input/InputField";
-import Checkbox from "../form/input/Checkbox";
 import Button from "../ui/button/Button";
 
 export default function SignInForm() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Dummy user
-    const dummyUser = {
+  const dummyUsers = [
+    {
       email: "admin@example.com",
       password: "admin123",
-    };
-
-    if (email === dummyUser.email && password === dummyUser.password) {
-      // Save login to localStorage
-      localStorage.setItem("role", "admin");
-
-      // Redirect to dashboard
-      navigate("/dashboard");
-      alert("process completed successfully")
+      role: "admin",
+    },
+    {
+      email: "superadmin@example.com",
+      password: "superadmin123",
+      role: "superadmin",
+    },
+  ];
+  
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+  
+    const user = dummyUsers.find((u) => u.email === email && u.password === password);
+  
+    if (user) {
+      localStorage.setItem("role", user.role);
+      if (user.role === "admin") {
+        navigate("/admin/dashboard");
+      } else if (user.role === "superadmin") {
+        navigate("/superadmin/appusermanagement");
+      }
     } else {
       setErrorMsg("Invalid email or password.");
     }
   };
-
+  
   return (
     <div className="flex flex-col flex-1">
       <div className="w-full max-w-md pt-10 mx-auto" />
@@ -94,10 +101,7 @@ export default function SignInForm() {
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <Checkbox checked={isChecked} onChange={setIsChecked} />
-                  <span className="block font-normal text-gray-700 text-theme-sm dark:text-gray-400">
-                    Keep me logged in
-                  </span>
+                 
                 </div>
 
                 <a

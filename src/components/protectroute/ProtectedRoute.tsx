@@ -1,6 +1,5 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
 
 
 interface ProtectedRouteProps {
@@ -10,8 +9,9 @@ interface ProtectedRouteProps {
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowedRoles }) => {
 
-  const { role } = useAuth();
-  if (!allowedRoles.includes(role!)) return <Navigate to="/signin" replace />;
+  let role = localStorage.getItem("role")
+  
+  if (!allowedRoles.includes(role!)) return <Navigate to="/" replace />;
 
   return children;
 };

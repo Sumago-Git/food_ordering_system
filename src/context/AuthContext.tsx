@@ -14,7 +14,6 @@ const AuthContext = createContext<AuthContextType>({
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [role, setRole] = useState<string | null>(null);
-
   useEffect(() => {
     const storedRole = localStorage.getItem("role");
     if (storedRole) {
@@ -24,6 +23,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = (userRole: string) => {
     localStorage.setItem("role", userRole);
+    
     setRole(userRole);
   };
 
