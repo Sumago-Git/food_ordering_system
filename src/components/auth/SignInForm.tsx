@@ -68,6 +68,7 @@ export default function SignInForm() {
                   placeholder="info@gmail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  label=""
                 />
               </div>
 
@@ -81,6 +82,7 @@ export default function SignInForm() {
                     placeholder="Enter your password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    label=""
                   />
                   <span
                     onClick={() => setShowPassword(!showPassword)}
@@ -106,7 +108,7 @@ export default function SignInForm() {
 
                 <a
                   href="/reset-password"
-                  className="text-sm text-brand-500 hover:text-brand-600 dark:text-brand-400"
+                  className="text-sm text-green-600 hover:text-green-500 dark:text-green-500"
                 >
                   Forgot password?
                 </a>
