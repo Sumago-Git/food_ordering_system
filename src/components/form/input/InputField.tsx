@@ -2,7 +2,8 @@ import type React from "react";
 import type { FC } from "react";
 
 interface InputProps {
-  type?: "text" | "number" | "email" | "password" | "date" | "time" | string;
+  label: string;  // Add label prop
+  type?: "text" | "number" | "email" | "password" | "date" | "time" | "registration_date" | "last_login_timestamp" | string;
   id?: string;
   name?: string;
   placeholder?: string;
@@ -15,11 +16,13 @@ interface InputProps {
   disabled?: boolean;
   success?: boolean;
   error?: boolean;
-  hint?: string;
+  helperText?: string;
+  
 }
 
 const Input: FC<InputProps> = ({
-  type = "text",
+  label,
+  type = "string",
   id,
   name,
   placeholder,
@@ -32,7 +35,8 @@ const Input: FC<InputProps> = ({
   disabled = false,
   success = false,
   error = false,
-  hint,
+  helperText,
+
 }) => {
   let inputClasses = `h-11 w-full border-b bg-transparent px-0 py-2.5 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-0 dark:bg-transparent dark:text-white/90 dark:placeholder:text-white/30 ${className}`;
 
@@ -48,6 +52,10 @@ const Input: FC<InputProps> = ({
 
   return (
     <div className="relative">
+      {/* Label Element */}
+      <label htmlFor={id} className="text-sm text-gray-600 dark:text-white mb-1 block">
+        {label}
+      </label>
       <input
         type={type}
         id={id}
@@ -61,7 +69,7 @@ const Input: FC<InputProps> = ({
         disabled={disabled}
         className={inputClasses}
       />
-      {hint && (
+      {helperText && (
         <p
           className={`mt-1.5 text-xs ${
             error
@@ -71,7 +79,7 @@ const Input: FC<InputProps> = ({
               : "text-gray-500"
           }`}
         >
-          {hint}
+          {helperText}
         </p>
       )}
     </div>

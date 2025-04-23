@@ -3,12 +3,13 @@ import { ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode; // Button text or content
   size?: "sm" | "md"; // Button size
-  variant?: "primary" | "outline"; // Button variant
+  variant?: "primary" | "outline" | "gradient"; // Button variant
   startIcon?: ReactNode; // Icon before the text
   endIcon?: ReactNode; // Icon after the text
   onClick?: () => void; // Click handler
   disabled?: boolean; // Disabled state
   className?: string; // Disabled state
+  
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -33,6 +34,8 @@ const Button: React.FC<ButtonProps> = ({
       "bg-brand-500 text-white shadow-theme-xs hover:bg-brand-600 disabled:bg-brand-300",
     outline:
       "bg-white text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-400 dark:ring-gray-700 dark:hover:bg-white/[0.03] dark:hover:text-gray-300",
+      gradient:
+    "text-black bg-[linear-gradient(270deg,_#ffe91b_8.66%,_#063f1f_103.05%)] hover:bg-[linear-gradient(270deg,_#e6d419_8.66%,_#052f17_103.05%)]",
   };
 
   return (
