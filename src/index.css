@@ -156,13 +156,14 @@ layer(base);
   --drop-shadow-4xl: 0 35px 35px rgba(0, 0, 0, 0.25),
     0 45px 65px rgba(0, 0, 0, 0.15);
 
-  --z-index-1: 1;
-  --z-index-9: 9;
-  --z-index-99: 99;
-  --z-index-999: 999;
+   --z-index-1: 1; 
+   --z-index-9: 9;
+  --z-index-99: 99; 
+  /* --z-index-999: 999; */
   --z-index-9999: 9999;
-  --z-index-99999: 99999;
-  --z-index-999999: 999999;
+  /* --z-index-99999: 99999; */
+  --9: 999999;
+ 
 }
 
 /*
@@ -777,10 +778,33 @@ span.flatpickr-weekday,
   @apply opacity-100;
 }
 
+
+.css-wsew38 {
+  justify-content: end !important;
+}
+
+.css-1297awb-MuiButtonBase-root-MuiButton-root {
+  border: 0 !important;
+}
+
+.css-d8i980-MuiButton-startIcon {
+  display: flex !important;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  margin-left: 0px !important;
+  padding: 0 !important;
+}
+
+.css-1297awb-MuiButtonBase-root-MuiButton-root {
+  min-width: 0px !important;
+}
+
+.css-1peo4km-MuiPaper-root-MuiDialog-paper{
+  border-radius: 25px;
+}
+
 .menu-item-active {
-  background-color: var(--color-brand-50);
-  color: var(--color-brand-500);
-  border-radius: 5px solid red;
-  border-right: 5px solid;
-  border-radius: 0px;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-right: 5px solid #ffc536 !important;
 }

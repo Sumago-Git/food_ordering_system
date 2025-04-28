@@ -3,8 +3,11 @@ import { Link, useLocation } from "react-router";
 // Assume these icons are imported from an icon library
 import {
   HorizontaLDots,
- 
   UserCircleIcon,
+  DocsIcon,
+  MailIcon,
+  TableIcon,
+  GroupIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 import SidebarWidget from "./SidebarWidget";
@@ -17,6 +20,11 @@ type NavItem = {
 
 
 const adminNavItems: NavItem[] = [
+  {
+    icon: <UserCircleIcon />,
+    name: "Dashboard",
+    path: "/admin/dashboard",
+  },
   {
     icon: <UserCircleIcon />,
     name: "Category Management",
@@ -41,7 +49,12 @@ const adminNavItems: NavItem[] = [
 
 const superAdminNavItems: NavItem[] = [
   {
-    icon: <UserCircleIcon />,
+    icon: <TableIcon/>,
+    name: "Dashboard",
+    path: "/superadmin/dashboard",
+  },
+  {
+    icon: <GroupIcon/>,
     name: "App User Management",
     path: "/superadmin/appusermanagement",
   },
@@ -61,12 +74,12 @@ const superAdminNavItems: NavItem[] = [
     path: "/superadmin/hotels",
   },
   {
-    icon: <UserCircleIcon />,
+    icon: <DocsIcon />,
     name: "Reports",
     path: "/superadmin/reports",
   },
   {
-    icon: <UserCircleIcon />,
+    icon: <MailIcon />,
     name: "Feedback Management",
     path: "/superadmin/feedbackmanagement",
   },
